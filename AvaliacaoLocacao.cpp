@@ -402,6 +402,7 @@ void excluirLocacao(vector<Locacao> &locacoes) {
         cout << "Escolha invalida" << endl;
     }
 }
+
 // funcao para alterar locacao
 void alterarLocacao(vector<Locacao> &locacoes) {
     system("clear||cls");
@@ -446,7 +447,7 @@ void alterarLocacao(vector<Locacao> &locacoes) {
     } else if (opcao == 'N' || opcao == 'n') {
         locacao.realizada = false;
     } else {
-        cout << "Opção invalida." << endl;
+        cout << "Opcao invalida." << endl;
         system("pause");
     }
 }
