@@ -22,9 +22,15 @@ struct Veiculo {
 struct Locacao {
     Cliente cliente;
     Veiculo veiculo;
+    Ocorrencia ocorrencia;
     string data_hora_retirada;
     string data_hora_entrega;
     bool realizada;
+};
+struct Ocorrencia {
+    string descricao;
+    string data_hora_ocorrencia;
+    int numApolice;
 };
 
 void incluirCliente(vector<Cliente> &clientes) {
@@ -56,7 +62,7 @@ void excluirCliente(vector<Cliente> &clientes) {
             return;
         }
     }
-    cout << "Cliente não encontrado." << endl;
+    cout << "Cliente nao encontrado" << endl;
     system("pause");
 }
 
@@ -101,7 +107,7 @@ void alterarCliente(vector<Cliente> &clientes) {
         }
     }
     if(!encontrado){
-        cout << "Cliente nao encontrado." << endl;
+        cout << "Cliente nao encontrado" << endl;
         system("pause");
     }
     
@@ -175,11 +181,11 @@ void excluirVeiculo(vector<Veiculo>& veiculos) {
     for (auto it = veiculos.begin(); it != veiculos.end(); ++it) {
         if (it->placa == placa) {
             veiculos.erase(it);
-            cout << "Veículo excluido com sucesso!" << endl;
+            cout << "Veiculo excluido com sucesso!" << endl;
             return;
         }
     }
-    cout << "Veiculo nao encontrado." << endl;
+    cout << "Veiculo nao encontrado" << endl;
     system("pause");
 }
 
@@ -229,7 +235,7 @@ void alterarVeiculo(vector<Veiculo>& veiculos) {
     }
 
     if(!encontrado){
-        cout << "Veiculo nao encontrado." << endl;
+        cout << "Veiculo nao encontrado" << endl;
         system("pause");
     }
 }
@@ -279,7 +285,7 @@ void localizarVeiculo(const vector<Veiculo>& veiculos) {
     
 }
 
-bool cnhExiste(const string &cnh, vector<Cliente> &clientes) {
+bool cnhExiste(string &cnh, vector<Cliente> &clientes) {
     for (auto cli = clientes.begin(); cli != clientes.end(); cli++) {
         if (cli->cnh == cnh) {
             return true;
@@ -288,7 +294,7 @@ bool cnhExiste(const string &cnh, vector<Cliente> &clientes) {
     return false;
 }
 
-bool veiculoExiste(const string& placa, vector<Veiculo> &veiculos) {
+bool veiculoExiste(string& placa, vector<Veiculo> &veiculos) {
     for (auto veiculo = veiculos.begin(); veiculo != veiculos.end(); veiculo++) {
         if (veiculo->placa == placa) {
             return true;
@@ -327,7 +333,7 @@ void incluirLocacao(vector<Locacao> &locacoes, vector<Veiculo> &veiculos, vector
         }
     }
     if (!veiculoEncontrado) {
-        cout << "Veiculo nao encontrado. Se necessario, cadastre no módulo de veiculos" << endl;
+        cout << "Veiculo nao encontrado. Se necessario, cadastre no modulo de veiculos" << endl;
         return;
     }
     cout << "Data/hora de retirada: ";
@@ -371,7 +377,6 @@ void listarLocacao(vector<Locacao> &locacoes){
             cout << "----------------------------------------" << endl;
         }
     }
-    
     system("pause");
 }
 
@@ -536,6 +541,7 @@ int main() {
         cout << "1. Gestao de clientes" << endl;
         cout << "2. Gestao de veiculos" << endl;
         cout << "3. Gestao de locacoes" << endl;
+        cout << "3. Gestao de ocorrencias" << endl;
         cout << "0. Sair" << endl;
         cout << "Escolha uma opcao: ";
         cin >> op;
@@ -550,6 +556,8 @@ int main() {
             case 3:
                 menuLocacao(locacoes, veiculos, clientes);
                 break;
+            case 4:
+                //menuOcorrencia();
             case 0:
                 cout << "Saindo do programa..." << endl;
                 system("clear||cls");

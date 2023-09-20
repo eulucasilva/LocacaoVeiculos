@@ -2,7 +2,7 @@
 
 ## Sobre
 
-Este programa em C++ foi desenvolvido para avaliação do módulo I da Residência em Software da CEPEDI em parceria com a UESC.
+Este programa em C++ foi desenvolvido para avaliação do módulo I da Residência em Software da CEPEDI em parceria com a UESC. Foi utilizado `structs` e `coleções` como estrutura de dados para armazenamento das informações.
 
 ## 📄 Instruções
 
