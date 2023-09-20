@@ -145,7 +145,7 @@ void localizarCliente(vector<Cliente> &clientes) {
         }
     }
     if(!encontrado){
-        cout << "Cliente nao encontrado." << endl;
+        cout << "Cliente nao encontrado" << endl;
     } 
 }
 
@@ -383,7 +383,7 @@ void excluirLocacao(vector<Locacao> &locacoes) {
     int indice = 1;
     for (auto locacao = locacoes.begin(); locacao != locacoes.end(); locacao++) {
         if (locacao->veiculo.placa == placa) {
-            cout << indice << ". cliente: " << locacao->cliente.nome << ", Data de retirada: " << locacao->data_hora_retirada << endl;
+            cout << indice << ". Cliente " << locacao->cliente.nome << " | Data de retirada: " << locacao->data_hora_retirada << endl;
         }
         indice++;
     }
@@ -396,7 +396,6 @@ void excluirLocacao(vector<Locacao> &locacoes) {
     } else {
         cout << "Escolha invalida" << endl;
     }
-    2
 }
 
 
